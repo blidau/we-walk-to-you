@@ -75,11 +75,12 @@
       // implement the rules of the poem
       function processPoem() {
         counter++;
-        addLine();
-        if (counter % 4 === 0) {
+        if (counter % 5 === 0) {
           addBlankLine();
+        } else {
+          addLine();
         }
-        if (counter > 12) {
+        if (counter > 15) {
           removeFirstLine();
         }
       }
