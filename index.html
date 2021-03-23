@@ -34,13 +34,18 @@
     <h1>We walk to you</h1>
     <div id="poem"></div>
     <script>
+      // set up the lists of words
       const subjects = "you,I,we,they".split(","),
         verbs = "run,walk,speak,drift,talk,whisper".split(","),
         objects = "me,you,her,him,them".split(",");
+      // set up the counter
       let counter = 0;
+
+      // a function to pull a random item from a list
       function getRandomFromList(list) {
         return list[Math.floor(Math.random() * list.length)];
       }
+      // add a line to the poem constructed from the lists of words
       function addLine() {
         // create the line
         const line = document.createElement("div");
@@ -56,15 +61,18 @@
         const poem = document.getElementById("poem");
         poem.appendChild(line);
       }
+      // add a blank line to the poem
       function addBlankLine() {
         const line = document.createElement("div");
         const poem = document.getElementById("poem");
         poem.appendChild(line);
       }
+      // remove the first line from the poem
       function removeFirstLine() {
         const poem = document.getElementById("poem");
         poem.removeChild(poem.childNodes[0]);
       }
+      // implement the rules of the poem
       function processPoem() {
         counter++;
         addLine();
